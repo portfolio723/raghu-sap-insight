@@ -119,9 +119,9 @@ function Hero() {
   return (
     <section
       id="overview"
-      className="scroll-mt-24 border-b border-border-light px-5 py-14 md:px-8 md:py-20 xl:py-24"
+      className="scroll-mt-24 border-b border-border-light px-5 py-14 md:px-8 md:py-16 xl:py-16"
     >
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:items-center lg:gap-14">
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:items-start lg:gap-14">
         <Reveal>
           <p className="eyebrow">SAP Security Expert</p>
           <h1 className="mt-4">Raghu Boddu — SAP Security Expert</h1>
@@ -400,24 +400,45 @@ function Training() {
 }
 
 function Certifications() {
+  const stack1 = CERTIFICATIONS.slice(0, 4);
+  const stack2 = CERTIFICATIONS.slice(4, 8);
+
   return (
     <Section id="certifications" tone="muted">
       <SectionHeader eyebrow="Credentials" title="Professional Qualifications & Certifications" />
-      <ul className="mt-8 max-w-4xl">
-        {CERTIFICATIONS.map((c, i) => (
-          <Reveal
-            as="li"
-            key={c.code}
-            delay={i * 40}
-            className="flex flex-col gap-1 border-b border-border py-4 sm:flex-row sm:items-baseline sm:gap-8"
-          >
-            <span className="tech w-48 shrink-0 text-[14px] font-medium text-primary">
-              {c.code}
-            </span>
-            <span className="text-[15px] text-text-secondary">{c.name}</span>
-          </Reveal>
-        ))}
-      </ul>
+      <div className="mt-10 grid gap-6 md:grid-cols-2 md:gap-8">
+        <ul className="divide-y divide-border border-y border-border">
+          {stack1.map((c, i) => (
+            <Reveal
+              as="li"
+              key={c.code}
+              delay={i * 50}
+              className="group flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:gap-6 px-2 rounded-sm transition-colors duration-200 hover:bg-background/80 md:py-5"
+            >
+              <span className="tech w-36 shrink-0 text-[14px] font-medium text-primary">
+                {c.code}
+              </span>
+              <span className="text-[15px] text-text-secondary">{c.name}</span>
+            </Reveal>
+          ))}
+        </ul>
+
+        <ul className="divide-y divide-border border-y border-border">
+          {stack2.map((c, i) => (
+            <Reveal
+              as="li"
+              key={c.code}
+              delay={(i + 4) * 50}
+              className="group flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:gap-6 px-2 rounded-sm transition-colors duration-200 hover:bg-background/80 md:py-5"
+            >
+              <span className="tech w-36 shrink-0 text-[14px] font-medium text-primary">
+                {c.code}
+              </span>
+              <span className="text-[15px] text-text-secondary">{c.name}</span>
+            </Reveal>
+          ))}
+        </ul>
+      </div>
     </Section>
   );
 }

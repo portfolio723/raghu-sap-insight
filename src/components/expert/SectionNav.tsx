@@ -23,7 +23,7 @@ export function SectionNav() {
 
   return (
     <nav aria-label="Profile sections" className="sticky top-24 hidden xl:block">
-      <p className="eyebrow mb-4">On this profile</p>
+      <p className="eyebrow mb-4">In this profile</p>
       <ul className="border-l border-border">
         {SECTIONS.map((s) => {
           const isActive = active === s.id;
