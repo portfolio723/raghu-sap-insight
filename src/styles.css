@@ -57,40 +57,40 @@
   --radius: 8px;
 
   /* Brand */
-  --primary: oklch(0.339 0.121 260.3); /* #003472 */
-  --primary-foreground: oklch(1 0 0);
-  --signal: oklch(0.652 0.181 30.5); /* #F25140 */
-  --signal-foreground: oklch(1 0 0);
+  --primary: #ea5845; /* Signature Orange CTA */
+  --primary-foreground: #ffffff;
+  --signal: #ea5845;
+  --signal-foreground: #ffffff;
 
   /* Background */
-  --background: oklch(1 0 0);
-  --muted-bg: oklch(0.968 0.006 247.9); /* #F3F6F9 */
-  --surface: oklch(0.99 0.003 247.9); /* #FBFCFD */
-  --surface-2: oklch(0.977 0.004 247.9); /* #F6F8FA */
+  --background: #ffffff;
+  --muted-bg: #f8fafc;
+  --surface: #fbfcfd;
+  --surface-2: #f8fafc;
 
-  /* Text */
-  --foreground: oklch(0.35 0.1 258); /* #003872 */
-  --text-primary: oklch(0.33 0.055 253); /* #17324D */
-  --text-secondary: oklch(0.505 0.033 251); /* #526579 */
-  --text-muted: oklch(0.638 0.024 249); /* #7B8998 */
+  /* Text - Crisp slate neutrals preserved for pure text content */
+  --foreground: #0f172a;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
 
-  --card: oklch(1 0 0);
+  --card: #ffffff;
   --card-foreground: var(--text-primary);
-  --popover: oklch(1 0 0);
+  --popover: #ffffff;
   --popover-foreground: var(--text-primary);
-  --secondary: oklch(0.968 0.006 247.9);
-  --secondary-foreground: var(--primary);
-  --muted: oklch(0.968 0.006 247.9);
+  --secondary: #fff7ed;
+  --secondary-foreground: #c2410c;
+  --muted: #f8fafc;
   --muted-foreground: var(--text-secondary);
-  --accent: oklch(0.968 0.006 247.9);
-  --accent-foreground: var(--primary);
+  --accent: #fff7ed;
+  --accent-foreground: #ea5845;
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(1 0 0);
+  --destructive-foreground: #ffffff;
 
-  --border: oklch(0.906 0.011 245); /* #DDE4EA */
-  --border-light: oklch(0.938 0.008 245); /* #E9EEF2 */
-  --input: oklch(0.906 0.011 245);
-  --ring: oklch(0.339 0.121 260.3);
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
+  --input: #e2e8f0;
+  --ring: #ea5845;
 }
 
 @layer base {
@@ -120,7 +120,7 @@
   h4 {
     font-family: var(--font-display);
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--color-text-primary);
     line-height: 1.2;
     letter-spacing: -0.01em;
   }
@@ -155,38 +155,38 @@
 
   ::selection,
   *::selection {
-    background-color: #003472 !important;
+    background-color: #ea5845 !important;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
   }
 
   ::-moz-selection,
   *::-moz-selection {
-    background-color: #003472 !important;
+    background-color: #ea5845 !important;
     color: #ffffff !important;
   }
 }
 
 ::selection,
 *::selection {
-  background-color: #003472 !important;
+  background-color: #ea5845 !important;
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
 }
 
 ::-moz-selection,
 *::-moz-selection {
-  background-color: #003472 !important;
+  background-color: #ea5845 !important;
   color: #ffffff !important;
 }
 
 @utility eyebrow {
   font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
 }
 
 @utility tech {
@@ -280,12 +280,16 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--color-primary);
+  color: #ea5845;
   font-weight: 500;
   font-size: 14px;
-  transition: gap 200ms ease-out;
+  transition: gap 200ms ease-out, color 150ms ease-out;
   & svg {
+    color: #ea5845;
     transition: transform 200ms ease-out;
+  }
+  &:hover {
+    color: #d94835;
   }
   &:hover svg {
     transform: translateX(3px);

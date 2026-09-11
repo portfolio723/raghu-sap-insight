@@ -34,8 +34,8 @@ export function SectionNav() {
                 aria-current={isActive ? "true" : undefined}
                 className={`-ml-px block border-l-2 py-2 pl-4 font-mono text-[11px] uppercase tracking-[0.14em] transition-colors duration-200 ${
                   isActive
-                    ? "border-primary text-primary"
-                    : "border-transparent text-text-muted hover:text-text-secondary"
+                    ? "border-[#ea5845] text-text-primary font-bold bg-orange-50/30"
+                    : "border-transparent text-text-muted hover:text-text-primary hover:border-slate-300"
                 }`}
               >
                 {s.label}

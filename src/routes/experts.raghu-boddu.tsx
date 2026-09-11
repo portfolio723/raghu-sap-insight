@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Play, X } from "lucide-react";
+import { Award, BookOpen, Clock, Play, ShieldCheck, Users, X } from "lucide-react";
 import heroImg from "@/assets/hero.png";
 import { SiteHeader } from "@/components/expert/SiteHeader";
 import { SectionNav, ScrollProgress, MobileSectionBar } from "@/components/expert/SectionNav";
@@ -115,6 +115,8 @@ function ExpertProfile() {
 
 /* ---------------------------------------------------------------- Hero */
 
+const TRUST_ICONS = [Clock, BookOpen, ShieldCheck, Award, Users];
+
 function Hero() {
   return (
     <section
@@ -141,13 +143,13 @@ function Hero() {
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#expertise"
-              className="inline-flex items-center gap-2 rounded-sm bg-primary px-5 py-3 text-[15px] font-medium text-primary-foreground transition-colors duration-200 hover:bg-primary/90"
+              className="inline-flex items-center gap-2 rounded-sm bg-primary px-5 py-3 text-[15px] font-medium text-white transition-colors duration-200 hover:bg-[#d94835]"
             >
-              Explore Expertise <Arrow />
+              Explore Expertise <Arrow className="text-white" />
             </a>
             <a
               href="#connect"
-              className="inline-flex items-center gap-2 rounded-sm border border-border px-5 py-3 text-[15px] font-medium text-primary transition-colors duration-200 hover:bg-muted-bg"
+              className="inline-flex items-center gap-2 rounded-sm border border-[#ea5845] px-5 py-3 text-[15px] font-medium text-[#ea5845] transition-colors duration-200 hover:bg-orange-50"
             >
               Connect
             </a>
@@ -174,12 +176,18 @@ function TrustStrip() {
   return (
     <div className="border-b border-border-light bg-muted-bg">
       <ul className="grid gap-px bg-border-light px-5 py-0 md:px-8 sm:grid-cols-2 lg:grid-cols-5 lg:bg-transparent lg:gap-8 lg:py-8">
-        {TRUST.map((t, i) => (
-          <Reveal as="li" key={t.value} delay={i * 60} className="bg-muted-bg py-5 lg:py-0">
-            <p className="font-display text-[18px] font-semibold text-primary">{t.value}</p>
-            <p className="mt-1 text-[13px] leading-snug text-text-secondary">{t.label}</p>
-          </Reveal>
-        ))}
+        {TRUST.map((t, i) => {
+          const Icon = TRUST_ICONS[i] || ShieldCheck;
+          return (
+            <Reveal as="li" key={t.value} delay={i * 60} className="bg-muted-bg py-5 lg:py-0">
+              <p className="flex items-start gap-2 font-display text-[16px] font-bold text-text-primary md:text-[17px]">
+                <Icon className="mt-0.5 h-4 w-4 shrink-0 text-[#ea5845]" />
+                <span>{t.value}</span>
+              </p>
+              <p className="mt-1 text-[13px] leading-snug text-text-secondary">{t.label}</p>
+            </Reveal>
+          );
+        })}
       </ul>
     </div>
   );
@@ -229,7 +237,12 @@ function Overview() {
         </Reveal>
 
         <Reveal delay={120} className="rounded-xl border border-border bg-surface p-6 md:p-8">
-          <p className="eyebrow text-signal">Key Distinctions</p>
+          <div className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-orange-200/90 bg-orange-50/70 px-2.5 py-0.5 shadow-2xs">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#ea5845]" />
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-800">
+              Key Distinctions
+            </span>
+          </div>
           <ul className="mt-4 space-y-3.5">
             {[
               "25+ years of SAP Security, GRC, Audit & Automation experience",
@@ -242,12 +255,12 @@ function Overview() {
                 key={item}
                 className="flex items-start gap-3 text-[14.5px] leading-relaxed text-text-primary"
               >
-                <span className="mt-[8px] h-[5px] w-[5px] shrink-0 rounded-pill bg-signal" />
+                <span className="mt-[8px] h-[5px] w-[5px] shrink-0 rounded-pill bg-[#ea5845]" />
                 <span>{item}</span>
               </li>
             ))}
             <li className="flex items-start gap-3 text-[14.5px] leading-relaxed text-text-primary">
-              <span className="mt-[8px] h-[5px] w-[5px] shrink-0 rounded-pill bg-signal" />
+              <span className="mt-[8px] h-[5px] w-[5px] shrink-0 rounded-pill bg-[#ea5845]" />
               <span>
                 Leadership — CEO,{" "}
                 <ExtLink href={LINKS.toggleNow} className="!inline-flex align-baseline">
@@ -285,8 +298,12 @@ function Expertise() {
               <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">{e.summary}</p>
               <ul className="mt-5 space-y-2 border-t border-border-light pt-5">
                 {e.topics.map((t) => (
-                  <li key={t} className="tech text-[13px] text-text-primary">
-                    {t}
+                  <li
+                    key={t}
+                    className="tech flex items-center gap-2 text-[13px] text-text-primary"
+                  >
+                    <span className="h-1 w-1 rounded-full bg-[#ea5845] shrink-0" />
+                    <span>{t}</span>
                   </li>
                 ))}
               </ul>
@@ -376,7 +393,12 @@ function Training() {
         </div>
         <Reveal delay={80}>
           <div className="rounded-lg border border-border bg-surface-2 p-6 md:p-8">
-            <p className="eyebrow">Topics</p>
+            <div className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-orange-200/90 bg-orange-50/70 px-2.5 py-0.5 shadow-2xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#ea5845]" />
+              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-800">
+                Course Topics
+              </span>
+            </div>
             <ul className="mt-4 space-y-3">
               {[
                 "Authorization concepts",
@@ -392,7 +414,10 @@ function Training() {
                   delay={i * 40}
                   className="flex items-center justify-between border-b border-border-light pb-3 text-[15px] text-text-primary last:border-0 last:pb-0"
                 >
-                  <span>{t}</span>
+                  <span className="flex items-center gap-2">
+                    <span className="h-1 w-1 rounded-full bg-[#ea5845] shrink-0" />
+                    <span>{t}</span>
+                  </span>
                   <span className="tech text-text-muted">SAP S/4HANA</span>
                 </Reveal>
               ))}
@@ -420,9 +445,10 @@ function Certifications() {
               delay={i * 50}
               className="group flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:gap-6 px-2 rounded-sm transition-colors duration-200 hover:bg-background/80 md:py-5"
             >
-              <span className="tech w-36 shrink-0 text-[14px] font-medium text-primary">
-                {c.code}
-              </span>
+              <div className="flex items-center gap-2 sm:w-40 shrink-0">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#ea5845] shrink-0" />
+                <span className="tech text-[14px] font-semibold text-text-primary">{c.code}</span>
+              </div>
               <span className="text-[15px] text-text-secondary">{c.name}</span>
             </Reveal>
           ))}
@@ -436,9 +462,10 @@ function Certifications() {
               delay={(i + 4) * 50}
               className="group flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:gap-6 px-2 rounded-sm transition-colors duration-200 hover:bg-background/80 md:py-5"
             >
-              <span className="tech w-36 shrink-0 text-[14px] font-medium text-primary">
-                {c.code}
-              </span>
+              <div className="flex items-center gap-2 sm:w-40 shrink-0">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#ea5845] shrink-0" />
+                <span className="tech text-[14px] font-semibold text-text-primary">{c.code}</span>
+              </div>
               <span className="text-[15px] text-text-secondary">{c.name}</span>
             </Reveal>
           ))}
@@ -462,9 +489,11 @@ function Career() {
         <ol className="relative border-l border-border pl-6 md:pl-8">
           {TIMELINE.map((t, i) => (
             <Reveal as="li" key={t.title} delay={i * 60} className="relative pb-9 last:pb-0">
-              <span className="absolute -left-[calc(1.5rem+5px)] top-[7px] h-[9px] w-[9px] rounded-pill border border-primary bg-background md:-left-[calc(2rem+5px)]" />
-              {t.year ? <p className="tech text-[12px] text-signal">{t.year}</p> : null}
-              <h3 className="mt-1 text-[18px] md:text-[20px]">{t.title}</h3>
+              <span className="absolute -left-[calc(1.5rem+5px)] top-[7px] h-[9px] w-[9px] rounded-full bg-[#ea5845] md:-left-[calc(2rem+5px)]" />
+              {t.year ? (
+                <p className="font-mono text-[12px] font-semibold text-text-primary">{t.year}</p>
+              ) : null}
+              <h3 className="mt-1 text-[18px] text-text-primary md:text-[20px]">{t.title}</h3>
               <p className="mt-2 text-[15px] leading-relaxed text-text-secondary">{t.text}</p>
             </Reveal>
           ))}
@@ -506,7 +535,9 @@ function SecOps() {
           <div className="flex items-center justify-between border-b border-border pb-4">
             <div>
               <p className="eyebrow text-text-muted">Traditional Model</p>
-              <h3 className="mt-1 text-[20px] font-semibold text-primary">Classic SAP Security</h3>
+              <h3 className="mt-1 text-[20px] font-semibold text-text-primary">
+                Classic SAP Security
+              </h3>
             </div>
             <span className="tech rounded border border-border bg-surface-2 px-2.5 py-1 text-[11px] text-text-muted">
               Static · Periodic
@@ -549,10 +580,18 @@ function SecOps() {
         >
           <div className="flex items-center justify-between border-b border-border pb-4">
             <div>
-              <p className="eyebrow text-signal">Modern Paradigm</p>
-              <h3 className="mt-1 text-[20px] font-semibold text-primary">SAP SecOps Landscape</h3>
+              <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-orange-200/90 bg-orange-50/70 px-2.5 py-0.5 shadow-2xs">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#ea5845]" />
+                <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-800">
+                  Modern Paradigm
+                </span>
+              </div>
+              <h3 className="mt-1 text-[20px] font-semibold text-text-primary">
+                SAP SecOps Landscape
+              </h3>
             </div>
-            <span className="tech rounded border border-primary/30 bg-primary/5 px-2.5 py-1 text-[11px] font-medium text-primary">
+            <span className="tech inline-flex items-center gap-1.5 rounded border border-orange-200 bg-orange-50/80 px-2.5 py-1 text-[11px] font-semibold text-slate-800">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#ea5845]" />
               Continuous · Telemetry
             </span>
           </div>
@@ -568,7 +607,7 @@ function SecOps() {
               {MODERN_LANDSCAPE.map((m) => (
                 <span
                   key={m}
-                  className="rounded-md border border-border bg-background px-3 py-1.5 font-mono text-[12px] font-medium text-text-primary shadow-2xs transition-colors hover:border-primary hover:text-primary"
+                  className="rounded-md border border-border bg-background px-3 py-1.5 font-mono text-[12px] font-medium text-text-primary shadow-2xs transition-colors hover:border-[#ea5845] hover:bg-orange-50/30"
                 >
                   {m}
                 </span>
@@ -577,8 +616,11 @@ function SecOps() {
           </div>
 
           <div className="mt-6 border-t border-border pt-4">
-            <p className="font-mono text-[11.5px] font-medium text-primary">
-              Focus: Pervasive visibility, live threat detection &amp; human oversight.
+            <p className="font-mono text-[11.5px] text-text-primary">
+              <span className="font-bold text-slate-900">Focus:</span>{" "}
+              <span className="text-text-secondary">
+                Pervasive visibility, live threat detection &amp; human oversight.
+              </span>
             </p>
           </div>
         </Reveal>
@@ -587,8 +629,13 @@ function SecOps() {
       {/* Analytical Axiom: Can Do vs Did Do */}
       <Reveal delay={160} className="mt-8 rounded-xl border border-border bg-background p-6 md:p-8">
         <div className="max-w-2xl">
-          <p className="eyebrow text-signal">The Core Analytical Framework</p>
-          <h3 className="mt-1 text-[22px] font-semibold text-primary md:text-[24px]">
+          <div className="mb-2.5 inline-flex items-center gap-1.5 rounded-full border border-orange-200/90 bg-orange-50/70 px-2.5 py-0.5 shadow-2xs">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#ea5845]" />
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-800">
+              The Core Analytical Framework
+            </span>
+          </div>
+          <h3 className="mt-1 text-[22px] font-semibold text-text-primary md:text-[24px]">
             The “Can Do” vs. “Did Do” Duality
           </h3>
           <p className="mt-2 text-[15px] text-text-secondary">
@@ -602,12 +649,15 @@ function SecOps() {
           <Reveal delay={80}>
             <div className="h-full rounded-lg border border-border bg-surface-2 p-5 md:p-6">
               <div className="flex items-center justify-between">
-                <span className="tech rounded bg-primary/10 px-2.5 py-1 text-[11px] font-semibold text-primary">
+                <span className="tech inline-flex items-center gap-1.5 rounded border border-border bg-background px-2.5 py-1 text-[11px] font-semibold text-text-primary">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#ea5845]" />
                   Entitlement State
                 </span>
                 <span className="font-mono text-[11px] text-text-muted">Static Analysis</span>
               </div>
-              <h4 className="mt-3 font-display text-[20px] font-semibold text-primary">Can Do</h4>
+              <h4 className="mt-3 font-display text-[20px] font-semibold text-text-primary">
+                Can Do
+              </h4>
               <p className="mt-2 text-[15px] font-medium text-text-primary">
                 “What can this identity technically execute?”
               </p>
@@ -620,14 +670,17 @@ function SecOps() {
 
           {/* Did Do */}
           <Reveal delay={160}>
-            <div className="h-full rounded-lg border border-signal/30 bg-surface-2 p-5 md:p-6">
+            <div className="h-full rounded-lg border border-border bg-surface-2 p-5 md:p-6">
               <div className="flex items-center justify-between">
-                <span className="tech rounded bg-signal/10 px-2.5 py-1 text-[11px] font-semibold text-signal">
+                <span className="tech inline-flex items-center gap-1.5 rounded border border-border bg-background px-2.5 py-1 text-[11px] font-semibold text-text-primary">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#ea5845]" />
                   Runtime Activity
                 </span>
                 <span className="font-mono text-[11px] text-text-muted">Dynamic Telemetry</span>
               </div>
-              <h4 className="mt-3 font-display text-[20px] font-semibold text-primary">Did Do</h4>
+              <h4 className="mt-3 font-display text-[20px] font-semibold text-text-primary">
+                Did Do
+              </h4>
               <p className="mt-2 text-[15px] font-medium text-text-primary">
                 “What did the identity actually perform?”
               </p>
@@ -643,11 +696,11 @@ function SecOps() {
         <Reveal delay={240}>
           <div className="mt-6 flex flex-col items-center justify-between gap-5 rounded-lg border border-border bg-surface-2 p-5 md:p-6 lg:flex-row">
             <div className="flex flex-wrap items-center justify-center gap-3 font-mono text-[13.5px] sm:gap-4 md:text-[14.5px]">
-              <span className="inline-flex min-w-[130px] items-center justify-center rounded-md border border-border bg-background px-5 py-2.5 text-center font-semibold text-primary shadow-xs sm:min-w-[145px]">
+              <span className="inline-flex min-w-[130px] items-center justify-center rounded-md border border-border bg-background px-5 py-2.5 text-center font-semibold text-text-primary shadow-xs sm:min-w-[145px]">
                 Can Do
               </span>
-              <span className="text-[16px] font-bold text-signal">+</span>
-              <span className="inline-flex min-w-[130px] items-center justify-center rounded-md border border-border bg-background px-5 py-2.5 text-center font-semibold text-primary shadow-xs sm:min-w-[145px]">
+              <span className="text-[16px] font-bold text-[#ea5845]">+</span>
+              <span className="inline-flex min-w-[130px] items-center justify-center rounded-md border border-border bg-background px-5 py-2.5 text-center font-semibold text-text-primary shadow-xs sm:min-w-[145px]">
                 Did Do
               </span>
               <span className="text-[16px] font-bold text-text-muted">➔</span>
@@ -691,10 +744,10 @@ function Research() {
                 rel="noopener noreferrer"
                 className="group flex items-center justify-between gap-6 border-b border-border py-4 transition-colors duration-200 hover:bg-surface-2"
               >
-                <span className="font-mono text-[12px] uppercase tracking-[0.12em] text-text-primary md:text-[13px]">
+                <span className="font-mono text-[12px] uppercase tracking-[0.12em] text-text-primary transition-colors group-hover:text-[#ea5845] md:text-[13px]">
                   {t}
                 </span>
-                <Arrow className="shrink-0 text-primary transition-transform duration-200 group-hover:translate-x-[3px]" />
+                <Arrow className="shrink-0 text-[#ea5845] transition-transform duration-200 group-hover:translate-x-[3px]" />
               </a>
             </Reveal>
           ))}
@@ -708,10 +761,10 @@ function Research() {
                 rel="noopener noreferrer"
                 className="group flex items-center justify-between gap-6 border-b border-border py-4 transition-colors duration-200 hover:bg-surface-2"
               >
-                <span className="font-mono text-[12px] uppercase tracking-[0.12em] text-text-primary md:text-[13px]">
+                <span className="font-mono text-[12px] uppercase tracking-[0.12em] text-text-primary transition-colors group-hover:text-[#ea5845] md:text-[13px]">
                   {t}
                 </span>
-                <Arrow className="shrink-0 text-primary transition-transform duration-200 group-hover:translate-x-[3px]" />
+                <Arrow className="shrink-0 text-[#ea5845] transition-transform duration-200 group-hover:translate-x-[3px]" />
               </a>
             </Reveal>
           ))}
@@ -720,9 +773,12 @@ function Research() {
 
       <Reveal delay={100} className="mt-10">
         <article className="max-w-3xl rounded-lg border border-border bg-surface-2 p-6 md:p-8">
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-signal">
-            Expert recommendation
-          </p>
+          <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-orange-200/90 bg-orange-50/70 px-2.5 py-0.5 shadow-2xs">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#ea5845]" />
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-800">
+              Expert Recommendation
+            </span>
+          </div>
           <h3 className="mt-3">SAP Security 2015 model already behind</h3>
           <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
             In his latest SAP Security Expert work, Raghu states that the traditional security model
@@ -794,12 +850,15 @@ function Podcasts() {
                 className="group flex flex-col gap-1 border-b border-border py-5 transition-colors duration-200 hover:bg-surface-2 sm:flex-row sm:items-center sm:justify-between"
               >
                 <span>
-                  <span className="eyebrow block">Podcast / Discussion</span>
-                  <span className="mt-1 block font-display text-[17px] font-semibold text-primary">
+                  <span className="inline-flex items-center gap-1.5 font-mono text-[11px] font-semibold uppercase tracking-wider text-text-muted">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#ea5845]" />
+                    Podcast / Discussion
+                  </span>
+                  <span className="mt-1 block font-display text-[17px] font-semibold text-text-primary transition-colors group-hover:text-[#ea5845]">
                     {p}
                   </span>
                 </span>
-                <Arrow className="shrink-0 text-primary transition-transform duration-200 group-hover:translate-x-[3px]" />
+                <Arrow className="shrink-0 text-[#ea5845] transition-transform duration-200 group-hover:translate-x-[3px]" />
               </a>
             </Reveal>
           ))}
@@ -814,12 +873,15 @@ function Podcasts() {
                 className="group flex flex-col gap-1 border-b border-border py-5 transition-colors duration-200 hover:bg-surface-2 sm:flex-row sm:items-center sm:justify-between"
               >
                 <span>
-                  <span className="eyebrow block">Podcast / Discussion</span>
-                  <span className="mt-1 block font-display text-[17px] font-semibold text-primary">
+                  <span className="inline-flex items-center gap-1.5 font-mono text-[11px] font-semibold uppercase tracking-wider text-text-muted">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#ea5845]" />
+                    Podcast / Discussion
+                  </span>
+                  <span className="mt-1 block font-display text-[17px] font-semibold text-text-primary transition-colors group-hover:text-[#ea5845]">
                     {p}
                   </span>
                 </span>
-                <Arrow className="shrink-0 text-primary transition-transform duration-200 group-hover:translate-x-[3px]" />
+                <Arrow className="shrink-0 text-[#ea5845] transition-transform duration-200 group-hover:translate-x-[3px]" />
               </a>
             </Reveal>
           ))}
@@ -844,16 +906,17 @@ function Speaking() {
                 as="li"
                 key={s}
                 delay={i * 50}
-                className="bg-background p-4 text-[15px] text-text-primary"
+                className="bg-background p-4 flex items-center gap-2.5 text-[15px] text-text-primary"
               >
-                {s}
+                <span className="h-1.5 w-1.5 rounded-full bg-[#ea5845] shrink-0" />
+                <span>{s}</span>
               </Reveal>
             ))}
           </ul>
         </Reveal>
         <Reveal delay={100} className="flex flex-col justify-end">
-          <blockquote className="border-l-2 border-signal pl-6">
-            <p className="font-display text-[22px] font-semibold leading-snug text-primary md:text-[26px]">
+          <blockquote className="border-l-2 border-[#ea5845] pl-6">
+            <p className="font-display text-[22px] font-semibold leading-snug text-text-primary md:text-[26px]">
               “So what should a security professional actually do differently on Monday morning?”
             </p>
             <footer className="mt-4 text-[14px] text-text-secondary">
@@ -955,15 +1018,18 @@ function Interviews() {
 
                 {/* Card Content */}
                 <div className="flex flex-1 flex-col p-5">
-                  <p className="eyebrow">{m.source}</p>
-                  <h3 className="mt-2 flex-1 text-[17px] font-semibold leading-snug text-primary md:text-[18px]">
+                  <span className="inline-flex items-center gap-1.5 font-mono text-[11px] font-semibold uppercase tracking-wider text-text-muted">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#ea5845]" />
+                    {m.source}
+                  </span>
+                  <h3 className="mt-2 flex-1 text-[17px] font-semibold leading-snug text-text-primary md:text-[18px]">
                     {m.title}
                   </h3>
                   <div className="mt-4 flex items-center justify-between border-t border-border pt-4">
                     <button
                       type="button"
                       onClick={() => setActiveVideo(`${m.videoId}-${i}`)}
-                      className="inline-flex items-center gap-1.5 text-[14px] font-medium text-signal hover:underline cursor-pointer"
+                      className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#ea5845] hover:underline cursor-pointer"
                     >
                       <Play className="h-3.5 w-3.5 fill-current" /> Watch Video
                     </button>
@@ -1032,8 +1098,13 @@ function ToggleNow() {
         </div>
         <Reveal delay={100}>
           <div className="rounded-lg border border-border bg-background p-6 md:p-8">
-            <p className="eyebrow">Raghu Boddu</p>
-            <p className="mt-1 font-display text-[18px] font-semibold text-primary">
+            <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-orange-200/90 bg-orange-50/70 px-2.5 py-0.5 shadow-2xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#ea5845]" />
+              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-800">
+                Executive Leadership
+              </span>
+            </div>
+            <p className="mt-1 font-display text-[18px] font-semibold text-text-primary">
               CEO / Product Innovation
             </p>
             <ol className="mt-6">
@@ -1043,7 +1114,7 @@ function ToggleNow() {
                     {c}
                   </p>
                   {i < chain.length - 1 ? (
-                    <p className="tech py-1 text-center text-[13px] text-text-muted">↓</p>
+                    <p className="tech py-1 text-center text-[13px] text-[#ea5845] font-bold">↓</p>
                   ) : null}
                 </li>
               ))}
@@ -1123,7 +1194,7 @@ function Viewpoint() {
     <Section id="viewpoint" tone="muted">
       <SectionHeader eyebrow="Philosophy" title="Raghu’s Viewpoint" />
       <Reveal delay={60} className="mt-6 max-w-3xl">
-        <p className="font-display text-[22px] font-semibold leading-snug text-primary md:text-[28px]">
+        <p className="font-display text-[22px] font-semibold leading-snug text-text-primary md:text-[28px]">
           SAP Security should be more than just “Can the user access it?”
         </p>
         <p className="mt-4 text-[15px] text-text-secondary">
@@ -1142,7 +1213,7 @@ function Viewpoint() {
               delay={i * 50}
               className="group flex items-start gap-4 py-4 transition-colors duration-200 hover:bg-background/80 px-2 rounded-sm md:py-5"
             >
-              <span className="tech w-7 shrink-0 pt-0.5 text-[12px] font-semibold text-signal">
+              <span className="tech w-7 shrink-0 pt-0.5 text-[12px] font-bold text-[#ea5845]">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <span className="font-display text-[17px] font-semibold leading-snug text-text-primary md:text-[19px]">
@@ -1161,7 +1232,7 @@ function Viewpoint() {
               delay={(i + 4) * 50}
               className="group flex items-start gap-4 py-4 transition-colors duration-200 hover:bg-background/80 px-2 rounded-sm md:py-5"
             >
-              <span className="tech w-7 shrink-0 pt-0.5 text-[12px] font-semibold text-signal">
+              <span className="tech w-7 shrink-0 pt-0.5 text-[12px] font-bold text-[#ea5845]">
                 {String(i + 5).padStart(2, "0")}
               </span>
               <span className="font-display text-[17px] font-semibold leading-snug text-text-primary md:text-[19px]">
@@ -1206,10 +1277,14 @@ function Connect() {
                   className="group flex items-center justify-between gap-6 border-b border-border py-4 transition-colors duration-200 hover:bg-surface-2"
                 >
                   <span className="flex flex-col">
-                    <span className="eyebrow">{c.label}</span>
-                    <span className="mt-1 text-[15px] text-text-primary">{c.value}</span>
+                    <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-text-muted">
+                      {c.label}
+                    </span>
+                    <span className="mt-1 text-[15px] font-medium text-text-primary">
+                      {c.value}
+                    </span>
                   </span>
-                  <Arrow className="text-primary transition-transform duration-200 group-hover:translate-x-[3px]" />
+                  <Arrow className="text-[#ea5845] transition-transform duration-200 group-hover:translate-x-[3px]" />
                 </a>
               </li>
             ))}
@@ -1217,8 +1292,13 @@ function Connect() {
         </Reveal>
         <Reveal delay={100}>
           <div className="rounded-lg border border-border bg-surface-2 p-6 md:p-8">
-            <p className="eyebrow">Start a conversation</p>
-            <p className="mt-3 font-display text-[20px] font-semibold text-primary">
+            <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-orange-200/90 bg-orange-50/70 px-2.5 py-0.5 shadow-2xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#ea5845]" />
+              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-800">
+                Start A Conversation
+              </span>
+            </div>
+            <p className="mt-3 font-display text-[20px] font-semibold text-text-primary">
               Speaking, interviews, podcasts and research collaborations
             </p>
             <div className="mt-6 flex flex-col gap-3">
@@ -1226,25 +1306,25 @@ function Connect() {
                 href={LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-sm bg-signal px-5 py-3 text-[15px] font-medium text-signal-foreground transition-opacity duration-200 hover:opacity-90"
+                className="inline-flex items-center justify-center gap-2 rounded-sm bg-[#ea5845] px-5 py-3 text-[15px] font-medium text-white transition-colors duration-200 hover:bg-[#d94835]"
               >
-                Connect with Raghu <Arrow />
+                Connect with Raghu <Arrow className="text-white" />
               </a>
               <a
                 href={LINKS.sapSecurityExpert}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-sm border border-primary px-5 py-3 text-[15px] font-medium text-primary transition-colors duration-200 hover:bg-background"
+                className="inline-flex items-center justify-center gap-2 rounded-sm border border-[#ea5845] px-5 py-3 text-[15px] font-medium text-[#ea5845] transition-colors duration-200 hover:bg-orange-50"
               >
-                Explore SAP Security Expert <Arrow />
+                Explore SAP Security Expert <Arrow className="text-[#ea5845]" />
               </a>
               <a
                 href={LINKS.toggleNow}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-sm border border-border px-5 py-3 text-[15px] font-medium text-text-primary transition-colors duration-200 hover:bg-background"
+                className="inline-flex items-center justify-center gap-2 rounded-sm border border-border px-5 py-3 text-[15px] font-medium text-text-primary transition-colors duration-200 hover:border-[#ea5845] hover:text-[#ea5845] hover:bg-orange-50/40"
               >
-                Visit ToggleNow <Arrow />
+                Visit ToggleNow <Arrow className="text-[#ea5845]" />
               </a>
             </div>
           </div>

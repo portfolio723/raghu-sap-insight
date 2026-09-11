@@ -8,7 +8,7 @@ export function Arrow({ className = "" }: { className?: string }) {
       viewBox="0 0 16 16"
       fill="none"
       aria-hidden="true"
-      className={className}
+      className={`text-[#ea5845] ${className}`}
     >
       <path
         d="M3 8h9M8.5 4l4 4-4 4"
@@ -35,10 +35,10 @@ export function ExtLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`arrow-link hover:underline underline-offset-4 ${className}`}
+      className={`arrow-link text-[#ea5845] hover:text-[#d94835] hover:underline underline-offset-4 ${className}`}
     >
       <span>{children}</span>
-      <Arrow />
+      <Arrow className="text-current" />
     </a>
   );
 }
@@ -101,8 +101,18 @@ export function SectionHeader({
 }) {
   return (
     <Reveal className="max-w-3xl">
-      {eyebrow ? <p className="eyebrow mb-3">{eyebrow}</p> : null}
-      <h2 id={id} className="text-[20px] font-semibold text-primary leading-tight md:text-[25px]">
+      {eyebrow ? (
+        <div className="mb-3.5 inline-flex items-center gap-1.5 rounded-full border border-orange-200/90 bg-orange-50/70 px-2.5 py-0.5 shadow-2xs">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#ea5845]" />
+          <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-800">
+            {eyebrow}
+          </span>
+        </div>
+      ) : null}
+      <h2
+        id={id}
+        className="text-[20px] font-semibold text-text-primary leading-tight md:text-[25px]"
+      >
         {title}
       </h2>
       {intro ? (
