@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ChevronRight, Menu, X } from "lucide-react";
+import logoImg from "@/assets/logo3.png";
 import { SECTIONS } from "@/data/raghu";
 
 const NAV = [
@@ -53,8 +54,16 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-[1536px] items-center justify-between px-5 md:px-8">
-        <a href="#overview" className="font-display text-[15px] font-semibold text-primary">
-          SAP Security Expert
+        <a
+          href="#overview"
+          className="flex items-center gap-2.5 transition-opacity hover:opacity-85"
+          aria-label="SAP Security Expert"
+        >
+          <img
+            src={logoImg || "/logo3.png"}
+            alt="SAP Security Expert"
+            className="h-8 w-auto object-contain md:h-9"
+          />
         </a>
 
         <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
@@ -134,10 +143,18 @@ export function SiteHeader() {
         >
           {/* Header */}
           <div className="flex h-16 shrink-0 items-center justify-between border-b border-border px-5 bg-background">
-            <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-signal" />
-              <span className="eyebrow font-semibold text-primary">Navigation</span>
-            </div>
+            <a
+              href="#overview"
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-2 transition-opacity hover:opacity-85"
+              aria-label="SAP Security Expert"
+            >
+              <img
+                src={logoImg || "/logo3.png"}
+                alt="SAP Security Expert"
+                className="h-7 w-auto object-contain"
+              />
+            </a>
             <button
               type="button"
               onClick={() => setOpen(false)}
