@@ -124,8 +124,13 @@ function Hero() {
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:items-start lg:gap-14">
         <Reveal>
           <p className="eyebrow">SAP Security Expert</p>
-          <h1 className="mt-4">Raghu Boddu — SAP Security Expert</h1>
-          <p className="mt-4 font-display text-[20px] font-semibold leading-snug text-text-primary md:text-[23px]">
+          <h1 className="mt-4">
+            <span className="block">Raghu Boddu</span>
+            <span className="mt-1 block text-[26px] font-normal text-text-secondary md:text-[34px]">
+              SAP Security Expert
+            </span>
+          </h1>
+          <p className="mt-4 font-display text-[16px] font-semibold leading-normal text-text-primary md:text-[18px]">
             SAP Security, GRC, Cyber Security, Access Governance, Automation, AI
           </p>
           <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-text-secondary md:text-[17px]">

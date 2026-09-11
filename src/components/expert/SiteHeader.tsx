@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ChevronRight, Menu, X } from "lucide-react";
-import logoImg from "@/assets/logo4.png";
+import logoImg from "@/assets/logo3.png";
 import { SECTIONS } from "@/data/raghu";
 
 const NAV = [
@@ -60,7 +60,7 @@ export function SiteHeader() {
           aria-label="SAP Security Expert"
         >
           <img
-            src={logoImg || "/logo4.png"}
+            src={logoImg || "/logo3.png"}
             alt="SAP Security Expert"
             className="h-8 w-auto object-contain md:h-9"
           />
@@ -150,7 +150,7 @@ export function SiteHeader() {
               aria-label="SAP Security Expert"
             >
               <img
-                src={logoImg || "/logo4.png"}
+                src={logoImg || "/logo3.png"}
                 alt="SAP Security Expert"
                 className="h-7 w-auto object-contain"
               />
