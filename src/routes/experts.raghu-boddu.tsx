@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Play, X } from "lucide-react";
+import heroImg from "@/assets/hero.png";
 import { SiteHeader } from "@/components/expert/SiteHeader";
 import { SectionNav, ScrollProgress, MobileSectionBar } from "@/components/expert/SectionNav";
 import { Arrow, ExtLink, Reveal, Section, SectionHeader } from "@/components/expert/primitives";
@@ -151,10 +152,11 @@ function Hero() {
         <Reveal delay={120}>
           <figure className="overflow-hidden rounded-xl border border-border bg-surface-2 shadow-xs">
             <img
-              src="/hero.png"
+              src={heroImg || "/hero.png"}
               alt="Raghu Boddu"
+              loading="eager"
+              decoding="async"
               className="aspect-[4/5] w-full object-cover object-top"
-              referrerPolicy="no-referrer"
             />
           </figure>
         </Reveal>
@@ -461,7 +463,7 @@ function Career() {
 
 function SecOps() {
   return (
-    <Section id="secops" tone="muted">
+    <Section id="secops">
       <SectionHeader
         eyebrow="Signature thinking"
         title="From SAP Security to SAP SecOps"
@@ -646,7 +648,7 @@ function Research() {
   const col2 = RESEARCH_TOPICS.slice(mid);
 
   return (
-    <Section id="research">
+    <Section id="research" tone="muted">
       <SectionHeader
         eyebrow="Insights"
         title="Research & Expert Insights"
@@ -712,7 +714,7 @@ function Research() {
 
 function Articles() {
   return (
-    <Section id="articles" tone="muted">
+    <Section id="articles">
       <SectionHeader
         eyebrow="Published content"
         title="Technical Articles & Published Content"
@@ -749,7 +751,7 @@ function Podcasts() {
   const col2 = PODCAST_TOPICS.slice(mid);
 
   return (
-    <Section id="podcasts">
+    <Section id="podcasts" tone="muted">
       <SectionHeader
         eyebrow="Conversations"
         title="Podcasts & Discussions"
@@ -806,7 +808,7 @@ function Podcasts() {
 
 function Speaking() {
   return (
-    <Section id="speaking" tone="muted">
+    <Section id="speaking">
       <SectionHeader eyebrow="Community" title="Speaking & Sharing Knowledge" />
       <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:gap-16">
         <Reveal>
@@ -857,7 +859,7 @@ function Interviews() {
   ];
 
   return (
-    <Section id="interviews">
+    <Section id="interviews" tone="muted">
       <SectionHeader
         eyebrow="Media"
         title="Interviews & Articles"
@@ -977,7 +979,7 @@ function ToggleNow() {
     "AI-driven Security Operations",
   ];
   return (
-    <Section id="togglenow" tone="muted">
+    <Section id="togglenow">
       <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
         <div>
           <SectionHeader
@@ -1088,6 +1090,9 @@ function SapSecurityExpert() {
 /* ----------------------------------------------------------- Viewpoint */
 
 function Viewpoint() {
+  const stack1 = VIEWPOINT_QUESTIONS.slice(0, 4);
+  const stack2 = VIEWPOINT_QUESTIONS.slice(4, 8);
+
   return (
     <Section id="viewpoint" tone="muted">
       <SectionHeader eyebrow="Philosophy" title="Raghu’s Viewpoint" />
@@ -1099,24 +1104,49 @@ function Viewpoint() {
           Security today demands a wider set of questions.
         </p>
       </Reveal>
-      <ol className="mt-10 max-w-4xl border-t border-border">
-        {VIEWPOINT_QUESTIONS.map((q, i) => (
-          <Reveal
-            as="li"
-            key={q}
-            delay={i * 50}
-            className="group flex gap-5 border-b border-border py-5 transition-colors duration-200 hover:bg-background"
-          >
-            <span className="tech w-8 shrink-0 pt-1 text-[12px] text-signal">
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <span className="font-display text-[18px] font-semibold leading-snug text-text-primary md:text-[20px]">
-              {q}
-            </span>
-          </Reveal>
-        ))}
-      </ol>
-      <Reveal delay={80} className="mt-6 max-w-3xl text-[15px] text-text-secondary">
+
+      {/* 8 questions organized into two equal stacks side by side */}
+      <div className="mt-10 grid gap-6 md:grid-cols-2 md:gap-8">
+        {/* Left Stack: Questions 01 - 04 */}
+        <ol className="divide-y divide-border border-y border-border">
+          {stack1.map((q, i) => (
+            <Reveal
+              as="li"
+              key={q}
+              delay={i * 50}
+              className="group flex items-start gap-4 py-4 transition-colors duration-200 hover:bg-background/80 px-2 rounded-sm md:py-5"
+            >
+              <span className="tech w-7 shrink-0 pt-0.5 text-[12px] font-semibold text-signal">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="font-display text-[17px] font-semibold leading-snug text-text-primary md:text-[19px]">
+                {q}
+              </span>
+            </Reveal>
+          ))}
+        </ol>
+
+        {/* Right Stack: Questions 05 - 08 */}
+        <ol className="divide-y divide-border border-y border-border">
+          {stack2.map((q, i) => (
+            <Reveal
+              as="li"
+              key={q}
+              delay={(i + 4) * 50}
+              className="group flex items-start gap-4 py-4 transition-colors duration-200 hover:bg-background/80 px-2 rounded-sm md:py-5"
+            >
+              <span className="tech w-7 shrink-0 pt-0.5 text-[12px] font-semibold text-signal">
+                {String(i + 5).padStart(2, "0")}
+              </span>
+              <span className="font-display text-[17px] font-semibold leading-snug text-text-primary md:text-[19px]">
+                {q}
+              </span>
+            </Reveal>
+          ))}
+        </ol>
+      </div>
+
+      <Reveal delay={80} className="mt-8 max-w-3xl text-[15px] text-text-secondary">
         <p>These questions are increasingly shaping Raghu’s philosophy of SAP Security.</p>
       </Reveal>
     </Section>
