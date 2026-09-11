@@ -153,10 +153,31 @@
     }
   }
 
-  ::selection {
-    background: var(--color-primary);
-    color: #fff;
+  ::selection,
+  *::selection {
+    background-color: #003472 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
   }
+
+  ::-moz-selection,
+  *::-moz-selection {
+    background-color: #003472 !important;
+    color: #ffffff !important;
+  }
+}
+
+::selection,
+*::selection {
+  background-color: #003472 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+::-moz-selection,
+*::-moz-selection {
+  background-color: #003472 !important;
+  color: #ffffff !important;
 }
 
 @utility eyebrow {
@@ -186,14 +207,73 @@
 
 @utility reveal {
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(16px);
   transition:
-    opacity 600ms ease-out,
-    transform 600ms ease-out;
+    opacity 650ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+
   &[data-visible="true"] {
     opacity: 1;
     transform: none;
   }
+}
+
+/* Staggered entrance animation for cards and content blocks */
+.reveal[data-visible="true"] > article:nth-child(1),
+.reveal[data-visible="true"] > div:nth-child(1),
+.reveal[data-visible="true"] > li:nth-child(1),
+.reveal[data-visible="true"] .reveal-item:nth-child(1) {
+  transition-delay: 50ms;
+}
+
+.reveal[data-visible="true"] > article:nth-child(2),
+.reveal[data-visible="true"] > div:nth-child(2),
+.reveal[data-visible="true"] > li:nth-child(2),
+.reveal[data-visible="true"] .reveal-item:nth-child(2) {
+  transition-delay: 130ms;
+}
+
+.reveal[data-visible="true"] > article:nth-child(3),
+.reveal[data-visible="true"] > div:nth-child(3),
+.reveal[data-visible="true"] > li:nth-child(3),
+.reveal[data-visible="true"] .reveal-item:nth-child(3) {
+  transition-delay: 210ms;
+}
+
+.reveal[data-visible="true"] > article:nth-child(4),
+.reveal[data-visible="true"] > div:nth-child(4),
+.reveal[data-visible="true"] > li:nth-child(4),
+.reveal[data-visible="true"] .reveal-item:nth-child(4) {
+  transition-delay: 290ms;
+}
+
+.reveal[data-visible="true"] > article:nth-child(5),
+.reveal[data-visible="true"] > div:nth-child(5),
+.reveal[data-visible="true"] > li:nth-child(5),
+.reveal[data-visible="true"] .reveal-item:nth-child(5) {
+  transition-delay: 370ms;
+}
+
+.reveal[data-visible="true"] > article:nth-child(6),
+.reveal[data-visible="true"] > div:nth-child(6),
+.reveal[data-visible="true"] > li:nth-child(6),
+.reveal[data-visible="true"] .reveal-item:nth-child(6) {
+  transition-delay: 450ms;
+}
+
+.reveal[data-visible="true"] > article:nth-child(7),
+.reveal[data-visible="true"] > div:nth-child(7),
+.reveal[data-visible="true"] > li:nth-child(7),
+.reveal[data-visible="true"] .reveal-item:nth-child(7) {
+  transition-delay: 530ms;
+}
+
+.reveal[data-visible="true"] > article:nth-child(8),
+.reveal[data-visible="true"] > div:nth-child(8),
+.reveal[data-visible="true"] > li:nth-child(8),
+.reveal[data-visible="true"] .reveal-item:nth-child(8) {
+  transition-delay: 610ms;
 }
 
 @utility arrow-link {

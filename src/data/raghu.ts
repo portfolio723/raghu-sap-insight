@@ -9,10 +9,8 @@ export const LINKS = {
   automationStories: "https://togglenow.com/automation-stories/",
   sapPressAuthor: "https://blog.sap-press.com/author/raghu-boddu",
   bookProcessControl: "https://www.sap-press.com/sap-process-control_5799/",
-  bookIag:
-    "https://www.sap-press.com/introducing-sap-cloud-identity-access-governance-iag_5985/",
-  training:
-    "https://www.sap-press.com/online-courses/authorizations-and-security-for-sap-s4hana/",
+  bookIag: "https://www.sap-press.com/introducing-sap-cloud-identity-access-governance-iag_5985/",
+  training: "https://www.sap-press.com/online-courses/authorizations-and-security-for-sap-s4hana/",
   linkedin: "https://www.linkedin.com/in/raghuboddu",
   sapCommunity: "https://community.sap.com/t5/user/viewprofilepage/user-id/600573",
   personalSite: "https://www.raghuboddu.com",
@@ -27,7 +25,6 @@ export const SECTIONS = [
   { id: "overview", label: "Overview" },
   { id: "expertise", label: "Expertise" },
   { id: "books", label: "Books" },
-  { id: "career", label: "Career" },
   { id: "secops", label: "SecOps" },
   { id: "research", label: "Research" },
   { id: "speaking", label: "Speaking" },
@@ -249,8 +246,7 @@ export const ARTICLE_CATEGORIES = [
   },
   {
     category: "Audit & Compliance",
-    description:
-      "SAP audit trails, regulatory requirements, controls and readiness for audit.",
+    description: "SAP audit trails, regulatory requirements, controls and readiness for audit.",
   },
 ];
 

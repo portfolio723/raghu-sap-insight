@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ChevronRight, Menu, X } from "lucide-react";
 import { SECTIONS } from "@/data/raghu";
 
 const NAV = [
@@ -27,12 +28,28 @@ export function SiteHeader() {
     };
   }, [open]);
 
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  const handleNavigate = (id: string) => {
+    setOpen(false);
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 120);
+  };
+
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-250 ${
-        scrolled
-          ? "border-b border-border bg-background/96 backdrop-blur-md"
-          : "border-b border-transparent bg-background"
+      className={`sticky top-0 z-50 w-full bg-background transition-[border-color] duration-200 ${
+        scrolled ? "border-b border-border shadow-2xs" : "border-b border-transparent"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-[1536px] items-center justify-between px-5 md:px-8">
@@ -61,60 +78,116 @@ export function SiteHeader() {
         <button
           type="button"
           onClick={() => setOpen(true)}
-          aria-label="Open sections menu"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-border text-primary lg:hidden"
+          aria-label="Open navigation menu"
+          aria-expanded={open}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-primary transition-colors hover:bg-surface-2 active:scale-95 cursor-pointer lg:hidden"
         >
-          <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true">
-            <path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" strokeWidth="1.5" />
-          </svg>
+          <Menu className="h-5 w-5" />
         </button>
       </div>
 
-      {open ? (
-        <div className="fixed inset-0 z-50 lg:hidden">
-          <button
-            aria-label="Close menu"
-            className="absolute inset-0 bg-primary/20"
-            onClick={() => setOpen(false)}
-          />
-          <div className="absolute inset-y-0 right-0 flex w-[86%] max-w-sm flex-col bg-background shadow-xl">
-            <div className="flex h-16 items-center justify-between border-b border-border px-5">
-              <span className="eyebrow">Sections</span>
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                aria-label="Close menu"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-border text-primary"
-              >
-                <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true">
-                  <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" strokeWidth="1.5" />
-                </svg>
-              </button>
+      {/* Smooth Mobile Menu Drawer & Backdrop */}
+      <div
+        className={`fixed inset-0 z-[100] lg:hidden transition-all duration-300 ${
+          open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+        }`}
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          width: "100vw",
+          height: "100dvh",
+        }}
+        aria-hidden={!open}
+      >
+        {/* Backdrop */}
+        <div
+          className={`fixed inset-0 bg-slate-950/60 transition-opacity duration-300 ease-out ${
+            open ? "opacity-100" : "opacity-0"
+          }`}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+          }}
+          onClick={() => setOpen(false)}
+          aria-label="Close menu backdrop"
+        />
+
+        {/* Sliding Menu Card */}
+        <div
+          className={`fixed top-0 right-0 bottom-0 z-10 flex w-[85%] max-w-[340px] flex-col border-l border-border bg-background shadow-2xl transition-transform duration-300 ease-out ${
+            open ? "translate-x-0" : "translate-x-full"
+          }`}
+          style={{
+            position: "fixed",
+            top: 0,
+            right: 0,
+            bottom: 0,
+            height: "100dvh",
+            maxHeight: "100dvh",
+          }}
+        >
+          {/* Header */}
+          <div className="flex h-16 shrink-0 items-center justify-between border-b border-border px-5 bg-background">
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-signal" />
+              <span className="eyebrow font-semibold text-primary">Navigation</span>
             </div>
-            <nav aria-label="Sections" className="flex-1 overflow-y-auto px-5 py-4">
-              {SECTIONS.map((s) => (
-                <a
-                  key={s.id}
-                  href={`#${s.id}`}
-                  onClick={() => setOpen(false)}
-                  className="block border-b border-border-light py-3 text-[16px] text-text-primary"
-                >
-                  {s.label}
-                </a>
-              ))}
-            </nav>
-            <div className="border-t border-border p-5">
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              aria-label="Close menu"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border text-primary transition-colors hover:bg-surface-2 active:scale-95 cursor-pointer"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </div>
+
+          {/* Navigation Menu */}
+          <nav
+            aria-label="Sections"
+            className="flex-1 overflow-y-auto px-4 py-3 divide-y divide-border-light/60 overscroll-contain"
+          >
+            {SECTIONS.map((s, i) => (
               <a
-                href="#connect"
-                onClick={() => setOpen(false)}
-                className="block rounded-sm bg-primary px-4 py-3 text-center text-[15px] font-medium text-primary-foreground"
+                key={s.id}
+                href={`#${s.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigate(s.id);
+                }}
+                className="group flex min-h-[44px] items-center justify-between py-2.5 px-3 rounded-lg text-[15px] font-medium text-text-primary transition-all duration-150 hover:bg-surface-2 active:bg-surface-2 cursor-pointer"
               >
-                Connect with Raghu
+                <span className="flex items-center gap-3">
+                  <span className="font-mono text-[11px] text-text-muted transition-colors group-hover:text-primary">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="font-display font-semibold transition-colors group-hover:text-primary">
+                    {s.label}
+                  </span>
+                </span>
+                <ChevronRight className="h-4 w-4 text-text-muted transition-transform duration-150 group-hover:translate-x-1 group-hover:text-primary" />
               </a>
-            </div>
+            ))}
+          </nav>
+
+          {/* Footer */}
+          <div className="shrink-0 border-t border-border bg-surface-2/80 p-4">
+            <button
+              type="button"
+              onClick={() => handleNavigate("connect")}
+              className="w-full rounded-md bg-primary py-3 text-center text-[14.5px] font-medium text-primary-foreground shadow-xs transition-colors hover:bg-primary/90 active:scale-[0.99] cursor-pointer"
+            >
+              Connect with Raghu
+            </button>
           </div>
         </div>
-      ) : null}
+      </div>
     </header>
   );
 }

@@ -7,7 +7,7 @@
 **Primary subject:** Raghu Boddu — SAP Security Expert
 **Primary objective:** Establish Raghu as a credible, technically deep SAP Security, GRC, Cybersecurity, Access Governance, Automation and AI expert while creating clear paths to his books, research, speaking, SAP Security Expert community and ToggleNow ecosystem.
 
-The PRD below uses the **attached profile document as the source of truth for the content, terminology, links and claims**. The document specifically requires the `/experts/raghu-boddu/` URL, preservation of its keyword cluster, proper H1/H2/H3 hierarchy, and external links opening in a new page. 
+The PRD below uses the **attached profile document as the source of truth for the content, terminology, links and claims**. The document specifically requires the `/experts/raghu-boddu/` URL, preservation of its keyword cluster, proper H1/H2/H3 hierarchy, and external links opening in a new page.
 
 ---
 
@@ -48,13 +48,13 @@ The visitor should progressively understand:
 
 Likely looking for:
 
-* SAP Security expertise
-* SAP GRC expertise
-* SAP S/4HANA Security
-* Access Governance
-* Security automation
-* SAP SecOps thinking
-* Technical content
+- SAP Security expertise
+- SAP GRC expertise
+- SAP S/4HANA Security
+- Access Governance
+- Security automation
+- SAP SecOps thinking
+- Technical content
 
 **Primary journey:**
 
@@ -66,13 +66,13 @@ Likely looking for:
 
 Looking for:
 
-* Experience
-* Credentials
-* Security transformation experience
-* Automation
-* Cybersecurity
-* Continuous security
-* ToggleNow relationship
+- Experience
+- Credentials
+- Security transformation experience
+- Automation
+- Cybersecurity
+- Continuous security
+- ToggleNow relationship
 
 **Primary journey:**
 
@@ -84,12 +84,12 @@ Looking for:
 
 Looking for:
 
-* Books
-* Training
-* Articles
-* Podcasts
-* Community
-* Practical knowledge
+- Books
+- Training
+- Articles
+- Podcasts
+- Community
+- Practical knowledge
 
 **Primary journey:**
 
@@ -101,11 +101,11 @@ Looking for:
 
 Looking for:
 
-* Speaker credibility
-* Topics
-* Interviews
-* Previous appearances
-* Contact
+- Speaker credibility
+- Topics
+- Interviews
+- Previous appearances
+- Contact
 
 **Primary journey:**
 
@@ -163,34 +163,34 @@ This makes the page feel like a **living professional knowledge profile**.
 
 **Modern editorial enterprise SaaS + technical intelligence platform**
 
-The supplied design system describes the brand as a **professional, high-fidelity intelligence platform** balancing enterprise technical clarity with an editorial aesthetic. 
+The supplied design system describes the brand as a **professional, high-fidelity intelligence platform** balancing enterprise technical clarity with an editorial aesthetic.
 
 ### Visual keywords
 
-* Precise
-* Editorial
-* Technical
-* Calm
-* Professional
-* Data-informed
-* Human
-* Experienced
-* SAP-native
+- Precise
+- Editorial
+- Technical
+- Calm
+- Professional
+- Data-informed
+- Human
+- Experienced
+- SAP-native
 
 ### Avoid
 
-* AI-generated portraits
-* AI robot icons
-* Brain/circuit graphics
-* Generic cybersecurity shields everywhere
-* Neon gradients
-* Purple/blue rainbow gradients
-* Excessive glassmorphism
-* 3D AI objects
-* “Futuristic” hacker imagery
-* Giant typography
-* Excessive bold weights
-* Generic startup illustrations
+- AI-generated portraits
+- AI robot icons
+- Brain/circuit graphics
+- Generic cybersecurity shields everywhere
+- Neon gradients
+- Purple/blue rainbow gradients
+- Excessive glassmorphism
+- 3D AI objects
+- “Futuristic” hacker imagery
+- Giant typography
+- Excessive bold weights
+- Generic startup illustrations
 
 ---
 
@@ -198,7 +198,7 @@ The supplied design system describes the brand as a **professional, high-fidelit
 
 ## 5.1 Color Tokens
 
-Use the supplied SAP Security Expert Hub tokens as the foundation. 
+Use the supplied SAP Security Expert Hub tokens as the foundation.
 
 ### Brand
 
@@ -239,11 +239,11 @@ Recommended extensions:
 
 Use **#F25140 sparingly**:
 
-* CTA
-* Exclusive labels
-* Active progress indicators
-* Important status
-* Selected navigation
+- CTA
+- Exclusive labels
+- Active progress indicators
+- Important status
+- Selected navigation
 
 Do **not** make the entire website red-accented.
 
@@ -253,9 +253,9 @@ Do **not** make the entire website red-accented.
 
 The supplied design system specifies:
 
-* **Source Sans Pro** for headlines
-* **Inter** for body
-* **Monospace** for technical/code references. 
+- **Source Sans Pro** for headlines
+- **Inter** for body
+- **Monospace** for technical/code references.
 
 ### Desktop
 
@@ -321,7 +321,7 @@ Mobile:
 
 # 8. Radius Tokens
 
-The source design system specifies rounded buttons around 4px / standard ShadCN-style radius. 
+The source design system specifies rounded buttons around 4px / standard ShadCN-style radius.
 
 Extend carefully:
 
@@ -335,10 +335,10 @@ Extend carefully:
 
 Use:
 
-* Buttons: 4–8px
-* Cards: 10–12px
-* Tags: pill
-* Hero profile image: 12–16px
+- Buttons: 4–8px
+- Cards: 10–12px
+- Tags: pill
+- Hero profile image: 12–16px
 
 Don't turn everything into oversized rounded cards.
 
@@ -346,7 +346,7 @@ Don't turn everything into oversized rounded cards.
 
 # 9. Layout Architecture
 
-The original design system defines a **1536px maximum width intelligence-hub architecture**. 
+The original design system defines a **1536px maximum width intelligence-hub architecture**.
 
 For this portfolio, adapt that system into an editorial expert layout.
 
@@ -437,20 +437,20 @@ Supporting descriptor:
 
 **SAP Security, GRC, Cyber Security, Access Governance, Automation, AI**
 
-These are the exact positioning terms from the source. 
+These are the exact positioning terms from the source.
 
 ### Intro
 
 Use the supplied profile introduction describing:
 
-* Around 25 years of experience
-* SAP Security
-* Governance
-* Risk & Compliance
-* Audits
-* Access Governance
-* Automation
-* Enterprise Cybersecurity 
+- Around 25 years of experience
+- SAP Security
+- Governance
+- Risk & Compliance
+- Audits
+- Access Governance
+- Automation
+- Enterprise Cybersecurity
 
 ### Hero layout
 
@@ -502,7 +502,7 @@ SAP Certified Security Professional
 Founder — SAP Security Expert
 ```
 
-These credentials are directly supported by the document. 
+These credentials are directly supported by the document.
 
 This is much more effective than large decorative hero graphics.
 
@@ -518,16 +518,16 @@ Use the full narrative from the profile rather than replacing it with generic ma
 
 The content should explain:
 
-* CEO of ToggleNow
-* Product innovation and design
-* Founded SAP Security Expert in 2005
-* SAP Security/GRC community involvement
-* Automation work
-* SAP PRESS authorship
-* Educator
-* Speaker
-* Practitioner
-* Community contributor 
+- CEO of ToggleNow
+- Product innovation and design
+- Founded SAP Security Expert in 2005
+- SAP Security/GRC community involvement
+- Automation work
+- SAP PRESS authorship
+- Educator
+- Speaker
+- Practitioner
+- Community contributor
 
 ### Visual
 
@@ -543,7 +543,7 @@ Use a **timeline + editorial text**.
 
 The source explicitly frames Raghu's career around:
 
-> How can organizations make SAP security practical, measurable, sustainable? 
+> How can organizations make SAP security practical, measurable, sustainable?
 
 ### Timeline
 
@@ -574,10 +574,10 @@ TODAY
 
 As the user scrolls:
 
-* Timeline line draws gradually
-* Each milestone fades in
-* No bouncing
-* No dramatic parallax
+- Timeline line draws gradually
+- Each milestone fades in
+- No bouncing
+- No dramatic parallax
 
 ---
 
@@ -595,55 +595,55 @@ Use four major groups:
 
 Include all supplied areas:
 
-* SAP Authorization Architecture
-* Role design and optimization
-* User and Identity Governance
-* SAP S/4HANA Security
-* Security in SAP Fiori
-* Authorization analysis
-* Least privilege design
-* Non-human and technical identities 
+- SAP Authorization Architecture
+- Role design and optimization
+- User and Identity Governance
+- SAP S/4HANA Security
+- Security in SAP Fiori
+- Authorization analysis
+- Least privilege design
+- Non-human and technical identities
 
 ### 02 — SAP GRC & Access Governance
 
 Include:
 
-* Access Control SAP
-* Access Risk Analysis
-* Segregation of Duties
-* User Access Review
-* Emergency Access Management
-* Business Role Administration
-* SAP Identity Access Governance
-* SAP Process Control
-* SAP Risk Management 
+- Access Control SAP
+- Access Risk Analysis
+- Segregation of Duties
+- User Access Review
+- Emergency Access Management
+- Business Role Administration
+- SAP Identity Access Governance
+- SAP Process Control
+- SAP Risk Management
 
 ### 03 — SAP Security & Cyber Security
 
 Include:
 
-* SAP Threat Monitoring
-* SAP Security Operations
-* SAP SIEM/SOAR
-* SAP HANA DB Security
-* Data Protection
-* Privileged Access Management
-* Audit Logging
-* Continuous Security Monitoring 
+- SAP Threat Monitoring
+- SAP Security Operations
+- SAP SIEM/SOAR
+- SAP HANA DB Security
+- Data Protection
+- Privileged Access Management
+- Audit Logging
+- Continuous Security Monitoring
 
 ### 04 — Security Automation & AI
 
 Include:
 
-* SAP Security Automation
-* GRC Process Automation
-* AI-powered Security Operations
-* SAP Authorizations and AI Agents
-* Non-human Identity Governance
-* Ongoing Access Governance
-* Security Analysis
-* Orchestrated Automation
-* Human-in-loop 
+- SAP Security Automation
+- GRC Process Automation
+- AI-powered Security Operations
+- SAP Authorizations and AI Agents
+- Non-human Identity Governance
+- Ongoing Access Governance
+- Security Analysis
+- Orchestrated Automation
+- Human-in-loop
 
 ---
 
@@ -669,17 +669,17 @@ Fiori security
 
 ### Hover
 
-* Image/icon doesn't dramatically transform
-* Border becomes SAP Blue
-* Arrow shifts 3–4px
-* Background transitions from white → muted blue-gray
-* 200ms transition
+- Image/icon doesn't dramatically transform
+- Border becomes SAP Blue
+- Arrow shifts 3–4px
+- Background transitions from white → muted blue-gray
+- 200ms transition
 
 ---
 
 # 17. Audit, Risk & Compliance
 
-Create a dedicated section because this is a distinct expertise group in the document. 
+Create a dedicated section because this is a distinct expertise group in the document.
 
 ### Visual
 
@@ -708,7 +708,7 @@ This should be one of the strongest authority sections.
 
 **SAP PRESS Author**
 
-The source states that Raghu is author/co-author of several SAP PRESS books covering SAP Security, GRC and Identity Access Governance. 
+The source states that Raghu is author/co-author of several SAP PRESS books covering SAP Security, GRC and Identity Access Governance.
 
 ## Book cards
 
@@ -718,18 +718,18 @@ The source states that Raghu is author/co-author of several SAP PRESS books cove
 
 Include the supplied description covering:
 
-* Installation
-* Configuration
-* Access Risk Analysis
-* Emergency Access Management
-* Access Request Management
-* Business Role Management
-* User Access Reviews
-* Segregation of Duties
-* BRFplus
-* MSMP workflows
-* Fiori
-* Extensions 
+- Installation
+- Configuration
+- Access Risk Analysis
+- Emergency Access Management
+- Access Request Management
+- Business Role Management
+- User Access Reviews
+- Segregation of Duties
+- BRFplus
+- MSMP workflows
+- Fiori
+- Extensions
 
 CTA:
 
@@ -741,7 +741,7 @@ CTA:
 
 **SAP Process Control 12.0 – Comprehensive Guide**
 
-Use the supplied description covering governance, configuration, master data, control evaluation, continuous controls monitoring, policy lifecycle, reporting, Fiori and Financial Compliance Management. 
+Use the supplied description covering governance, configuration, master data, control evaluation, continuous controls monitoring, policy lifecycle, reporting, Fiori and Financial Compliance Management.
 
 CTA:
 
@@ -753,7 +753,7 @@ CTA:
 
 **SAP Cloud Identity Access Governance (IAG)**
 
-Use supplied description. 
+Use supplied description.
 
 CTA:
 
@@ -767,7 +767,7 @@ CTA:
 
 **SAP S/4HANA Security Training**
 
-Use the supplied instructor information and course description. 
+Use the supplied instructor information and course description.
 
 ### UI
 
@@ -813,7 +813,7 @@ Foundation PRINCE2
 Security+ (CompTIA)
 ```
 
-These are explicitly listed in the document. 
+These are explicitly listed in the document.
 
 ### Visual
 
@@ -862,8 +862,6 @@ Automation
 AI Agents
 ```
 
-
-
 ### Visual treatment
 
 Create an elegant **horizontal evolution diagram**.
@@ -899,7 +897,7 @@ The source describes:
 
 **Can Do** — what an ID can technically do.
 
-**Did Do** — what the actual identity did. 
+**Did Do** — what the actual identity did.
 
 ### UI
 
@@ -936,20 +934,20 @@ This becomes a key visual metaphor for the entire portfolio.
 
 Use all source topics:
 
-* Evolution of SAP Security
-* Digital access risk
-* SAP SecOps
-* Continuous access governance
-* SAP security vulnerabilities
-* Access and SoD management
-* Modernization of SAP GRC
-* Security in SAP
-* Enterprise AI agent authorizations
-* Non-human identities
-* SAP Data Protection
-* Audit trail and statutory requirements
-* Security Automation
-* Cloud-based SAP security 
+- Evolution of SAP Security
+- Digital access risk
+- SAP SecOps
+- Continuous access governance
+- SAP security vulnerabilities
+- Access and SoD management
+- Modernization of SAP GRC
+- Security in SAP
+- Enterprise AI agent authorizations
+- Non-human identities
+- SAP Data Protection
+- Audit trail and statutory requirements
+- Security Automation
+- Cloud-based SAP security
 
 ### UI
 
@@ -969,7 +967,7 @@ SAP DATA PROTECTION                  →
 
 # 24. Featured Research
 
-The source specifically references Raghu's recommendation that the traditional 2015 SAP Security model is no longer sufficient for today's landscape. 
+The source specifically references Raghu's recommendation that the traditional 2015 SAP Security model is no longer sufficient for today's landscape.
 
 ### Featured card
 
@@ -1016,7 +1014,7 @@ AI agents, automation, non-human identities and security implications.
 
 ### Audit & Compliance
 
-SAP audit trails, regulatory requirements, controls and audit readiness. 
+SAP audit trails, regulatory requirements, controls and audit readiness.
 
 ---
 
@@ -1035,7 +1033,7 @@ Author · Date · Reading time
 → Read article
 ```
 
-The source design system explicitly recommends structured article cards with metadata and image-scale/shadow interactions rather than title color changes. 
+The source design system explicitly recommends structured article cards with metadata and image-scale/shadow interactions rather than title color changes.
 
 ---
 
@@ -1047,14 +1045,14 @@ The source design system explicitly recommends structured article cards with met
 
 Use supplied topics:
 
-* Cybersecurity for SAP
-* SAP Security Evolution
-* GRC
-* Security and AI
-* Automation
-* Risk Enterprise
-* Leadership
-* Future of SAP Security 
+- Cybersecurity for SAP
+- SAP Security Evolution
+- GRC
+- Security and AI
+- Automation
+- Risk Enterprise
+- Leadership
+- Future of SAP Security
 
 ### UI
 
@@ -1079,7 +1077,7 @@ SAP Security Evolution
 
 **SAP Security Expert**
 
-Explain that Raghu founded SAP Security Expert and that it is a practitioner-focused platform connecting SAP Security, GRC, Cybersecurity and Audit professionals. 
+Explain that Raghu founded SAP Security Expert and that it is a practitioner-focused platform connecting SAP Security, GRC, Cybersecurity and Audit professionals.
 
 ### Content ecosystem
 
@@ -1111,20 +1109,20 @@ External link opens new tab.
 
 Use all supplied channels:
 
-* Industry events
-* SAP Security community sessions
-* Webinars
-* Podcasts
-* Technical discussions
-* Professional forums
-* LinkedIn
-* Educational and training programs 
+- Industry events
+- SAP Security community sessions
+- Webinars
+- Podcasts
+- Technical discussions
+- Professional forums
+- LinkedIn
+- Educational and training programs
 
 ### Strong pull quote
 
 > “So what should a security professional actually do differently on Monday morning?”
 
-This is a strong editorial element from the source and should be visually emphasized. 
+This is a strong editorial element from the source and should be visually emphasized.
 
 ---
 
@@ -1146,7 +1144,7 @@ Include:
 
 **Microsoft MVP**
 
-The source states that Raghu contributed to SAP Blogs, published over 30 Microsoft Knowledge Base articles and was a Microsoft MVP for Windows Shell for three years. 
+The source states that Raghu contributed to SAP Blogs, published over 30 Microsoft Knowledge Base articles and was a Microsoft MVP for Windows Shell for three years.
 
 ### Video cards
 
@@ -1171,7 +1169,7 @@ Use real thumbnails from the linked videos rather than AI-created artwork.
 
 Use the supplied relationship:
 
-Raghu is CEO of ToggleNow, a SAP-centric technology and services company working across SAP Security, GRC, cybersecurity, automation and AI-driven security operations. 
+Raghu is CEO of ToggleNow, a SAP-centric technology and services company working across SAP Security, GRC, cybersecurity, automation and AI-driven security operations.
 
 ### Visual
 
@@ -1200,7 +1198,7 @@ AI-DRIVEN SECURITY OPERATIONS
 
 **Explore SAP Security & SecOps →**
 
-The document explicitly calls for the future SecOps pillar page to be linked here, but does not provide its final URL. Therefore this should remain a **CMS/configurable link until the actual page exists**, rather than inventing a URL. 
+The document explicitly calls for the future SecOps pillar page to be linked here, but does not provide its final URL. Therefore this should remain a **CMS/configurable link until the actual page exists**, rather than inventing a URL.
 
 ---
 
@@ -1237,8 +1235,6 @@ Is there a way to automate,
 but keep the human accountable?
 ```
 
-
-
 ### Visual
 
 Each question appears as a numbered editorial statement.
@@ -1261,11 +1257,11 @@ Very subtle active-state transition.
 
 Use the actual professional channels from the document:
 
-* LinkedIn
-* SAP Profile: `@GRCwithRaghu`
-* SAP Security Expert
-* ToggleNow
-* Personal website: `www.raghuboddu.com` 
+- LinkedIn
+- SAP Profile: `@GRCwithRaghu`
+- SAP Security Expert
+- ToggleNow
+- Personal website: `www.raghuboddu.com`
 
 ### Primary CTA
 
@@ -1327,9 +1323,9 @@ CONNECT
 
 Active section gets:
 
-* SAP Blue text
-* 2px left indicator
-* subtle transition
+- SAP Blue text
+- 2px left indicator
+- subtle transition
 
 ### Mobile
 
@@ -1397,25 +1393,25 @@ duration: 500–650ms
 
 ### Allowed
 
-* Fade-in
-* Small vertical reveal
-* Timeline drawing
-* Image scale 1 → 1.02
-* Arrow movement
-* Border transition
-* Active navigation indicator
-* Progress line
-* Number counter where actual numbers exist
+- Fade-in
+- Small vertical reveal
+- Timeline drawing
+- Image scale 1 → 1.02
+- Arrow movement
+- Border transition
+- Active navigation indicator
+- Progress line
+- Number counter where actual numbers exist
 
 ### Avoid
 
-* AI particle systems
-* Neon scanning
-* Floating 3D objects
-* Constant background animations
-* Excessive parallax
-* Cursor-following elements
-* Huge animated gradients
+- AI particle systems
+- Neon scanning
+- Floating 3D objects
+- Constant background animations
+- Excessive parallax
+- Cursor-following elements
+- Huge animated gradients
 
 ---
 
@@ -1459,20 +1455,20 @@ These are more authentic to Raghu's actual professional subject matter.
 
 ## Desktop — ≥1200px
 
-* Sticky left section navigation
-* Large editorial hero
-* 2-column content
-* 3-column article/book cards
-* Full timeline
-* Horizontal conceptual diagrams
+- Sticky left section navigation
+- Large editorial hero
+- 2-column content
+- 3-column article/book cards
+- Full timeline
+- Horizontal conceptual diagrams
 
 ## Tablet — 768–1199px
 
-* Remove persistent left rail
-* Use top section navigation
-* 2-column cards
-* Hero 50/50
-* Reduce section spacing
+- Remove persistent left rail
+- Use top section navigation
+- 2-column cards
+- Hero 50/50
+- Reduce section spacing
 
 ## Mobile — <768px
 
@@ -1560,12 +1556,12 @@ The following requirements should be included in the development acceptance crit
 
 Check:
 
-* tables
-* timeline
-* navigation
-* diagrams
-* book cards
-* media cards
+- tables
+- timeline
+- navigation
+- diagrams
+- book cards
+- media cards
 
 ---
 
@@ -1601,10 +1597,10 @@ All photographs, book covers and video thumbnails should be compressed.
 
 Recommended:
 
-* WebP / AVIF
-* Responsive `srcset`
-* Lazy loading below fold
-* Explicit width/height to prevent layout shift
+- WebP / AVIF
+- Responsive `srcset`
+- Lazy loading below fold
+- Explicit width/height to prevent layout shift
 
 ---
 
@@ -1626,21 +1622,21 @@ QA every supplied external URL.
 
 Required destinations include:
 
-* SAP Security Expert
-* ToggleNow
-* ToggleNow Automation Stories
-* SAP PRESS author
-* SAP PRESS books
-* SAP PRESS training
-* Expert Recommendation
-* LinkedIn
-* YouTube
-* SAP Community
-* SAP Security Expert Podcasts
-* SAP Security Expert Expert Recommendations
-* ToggleNow Solutions
+- SAP Security Expert
+- ToggleNow
+- ToggleNow Automation Stories
+- SAP PRESS author
+- SAP PRESS books
+- SAP PRESS training
+- Expert Recommendation
+- LinkedIn
+- YouTube
+- SAP Community
+- SAP Security Expert Podcasts
+- SAP Security Expert Expert Recommendations
+- ToggleNow Solutions
 
-The document explicitly requires links to be maintained and opened in a new page. 
+The document explicitly requires links to be maintained and opened in a new page.
 
 ---
 
@@ -1654,11 +1650,11 @@ Use:
 
 with:
 
-* slide/fade panel
-* section anchors
-* CTA
-* close button
-* body scroll lock
+- slide/fade panel
+- section anchors
+- CTA
+- close button
+- body scroll lock
 
 ---
 
@@ -1668,7 +1664,7 @@ The current document contains one placeholder:
 
 **“need to develop a secops pillar page and link here.”**
 
-This is an implementation note and **must not appear on the production website**. 
+This is an implementation note and **must not appear on the production website**.
 
 ---
 
@@ -1676,12 +1672,12 @@ This is an implementation note and **must not appear on the production website**
 
 Acceptance test:
 
-* iPhone Safari
-* Android Chrome
-* Tablet Safari/Chrome
-* Desktop Chrome
-* Desktop Safari
-* Desktop Edge
+- iPhone Safari
+- Android Chrome
+- Tablet Safari/Chrome
+- Desktop Chrome
+- Desktop Safari
+- Desktop Edge
 
 ---
 
@@ -1701,9 +1697,9 @@ There are no published articles in this category yet.
 
 Do not display:
 
-* blank cards
-* “Lorem ipsum”
-* empty image placeholders
+- blank cards
+- “Lorem ipsum”
+- empty image placeholders
 
 ---
 
@@ -1773,11 +1769,10 @@ No giant “404” taking the whole viewport.
 Every external source link should:
 
 ```html
-target="_blank"
-rel="noopener noreferrer"
+target="_blank" rel="noopener noreferrer"
 ```
 
-The source explicitly requires external links to open in a new page. 
+The source explicitly requires external links to open in a new page.
 
 ### Link treatment
 
@@ -1801,8 +1796,8 @@ Hover:
 
 The source contains two different LinkedIn URLs:
 
-* `linkedin.com/in/bodduraghu/` 
-* `linkedin.com/in/raghuboddu` 
+- `linkedin.com/in/bodduraghu/`
+- `linkedin.com/in/raghuboddu`
 
 **Do not silently choose one.**
 
@@ -1812,7 +1807,7 @@ Similarly, the source references:
 
 **[www.raghuboddu.com](http://www.raghuboddu.com)**
 
-as the personal website. 
+as the personal website.
 
 ---
 
@@ -1824,7 +1819,7 @@ as the personal website.
 /experts/raghu-boddu/
 ```
 
-As specified in the source. 
+As specified in the source.
 
 ## H1
 
@@ -1854,22 +1849,22 @@ Follow & Connect
 
 Maintain the document's terminology around:
 
-* SAP Security
-* SAP GRC
-* Cyber Security
-* Access Governance
-* SAP Cybersecurity
-* SAP S/4HANA Security
-* SAP Cloud Security
-* Security Automation
-* AI for SAP Security
-* SAP SecOps
-* Continuous Access Governance
-* Non-human identities
-* SAP Security Operations
-* Audit & Compliance
+- SAP Security
+- SAP GRC
+- Cyber Security
+- Access Governance
+- SAP Cybersecurity
+- SAP S/4HANA Security
+- SAP Cloud Security
+- Security Automation
+- AI for SAP Security
+- SAP SecOps
+- Continuous Access Governance
+- Non-human identities
+- SAP Security Operations
+- Audit & Compliance
 
-The source specifically instructs that its keyword cluster should be maintained for SEO. 
+The source specifically instructs that its keyword cluster should be maintained for SEO.
 
 ---
 
@@ -1909,11 +1904,11 @@ INP < 200ms
 
 ### Image rules
 
-* AVIF/WebP
-* Responsive image sizes
-* Lazy-load below fold
-* Preload hero image only
-* Avoid unnecessarily large portrait files
+- AVIF/WebP
+- Responsive image sizes
+- Lazy-load below fold
+- Preload hero image only
+- Avoid unnecessarily large portrait files
 
 ### Animation rules
 

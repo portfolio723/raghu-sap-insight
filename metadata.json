@@ -1,0 +1,6 @@
+{
+  "name": "Raghu SAP Insight",
+  "description": "SAP Security and GRC Expert Hub featuring professional background, advisory expertise, and insights by Raghu Boddu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

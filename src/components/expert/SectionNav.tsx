@@ -5,9 +5,7 @@ export function SectionNav() {
   const [active, setActive] = useState(SECTIONS[0].id);
 
   useEffect(() => {
-    const els = SECTIONS.map((s) => document.getElementById(s.id)).filter(
-      Boolean,
-    ) as HTMLElement[];
+    const els = SECTIONS.map((s) => document.getElementById(s.id)).filter(Boolean) as HTMLElement[];
     if (!els.length) return;
 
     const io = new IntersectionObserver(

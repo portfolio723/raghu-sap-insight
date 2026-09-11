@@ -52,7 +52,7 @@ export function Reveal({
   children: ReactNode;
   delay?: number;
   className?: string;
-  as?: "div" | "li" | "section" | "article";
+  as?: "div" | "li" | "section" | "article" | "ul" | "ol";
 }) {
   const ref = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
@@ -69,18 +69,18 @@ export function Reveal({
           }
         }
       },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.05 },
+      { rootMargin: "0px 0px -6% 0px", threshold: 0.05 },
     );
     io.observe(el);
     return () => io.disconnect();
   }, []);
 
-  const Comp = Tag as any;
+  const Comp = Tag as React.ElementType;
   return (
     <Comp
-      ref={ref as any}
+      ref={ref as unknown as React.Ref<HTMLElement>}
       data-visible={visible}
-      style={{ transitionDelay: `${delay}ms` }}
+      style={delay > 0 ? { transitionDelay: `${delay}ms` } : undefined}
       className={`reveal ${className}`}
     >
       {children}
@@ -102,7 +102,9 @@ export function SectionHeader({
   return (
     <Reveal className="max-w-3xl">
       {eyebrow ? <p className="eyebrow mb-3">{eyebrow}</p> : null}
-      <h2 id={id}>{title}</h2>
+      <h2 id={id} className="text-[20px] font-semibold text-primary leading-tight md:text-[25px]">
+        {title}
+      </h2>
       {intro ? (
         <p className="mt-4 text-[15px] md:text-[17px] leading-relaxed text-text-secondary">
           {intro}
@@ -116,17 +118,19 @@ export function Section({
   id,
   children,
   tone = "white",
+  className = "",
 }: {
   id: string;
   children: ReactNode;
   tone?: "white" | "muted" | "surface";
+  className?: string;
 }) {
   const bg =
     tone === "muted" ? "bg-muted-bg" : tone === "surface" ? "bg-surface-2" : "bg-background";
   return (
     <section
       id={id}
-      className={`section-pad scroll-mt-24 border-b border-border-light ${bg}`}
+      className={`section-pad scroll-mt-24 border-b border-border-light ${bg} ${className}`}
     >
       <div className="px-5 md:px-8">{children}</div>
     </section>
